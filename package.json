@@ -1,0 +1,46 @@
+{
+  "name": "@vatu/stylelint-config",
+  "version": "0.1.0",
+  "description": "Stylelint config for Vatu development.",
+  "keywords": [
+    "stylelint",
+    "stylelint-config",
+    "stylelint-config-vatu",
+    "vatu"
+  ],
+  "homepage": "https://github.com/vatu-team/stylelint-config",
+  "bugs": "https://github.com/vatu-team/stylelint-config/issues",
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Michael Bragg"
+    }
+  ],
+  "files": [
+    "changelog.md",
+    "license.md",
+    "readme.md",
+    "index.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vatu-team/stylelint-config.git"
+  },
+  "dependencies": {
+    "stylelint-config-recommended": "^7.0.0",
+    "stylelint-config-standard-scss": "^3.0.0",
+    "stylelint-no-unsupported-browser-features": "^5.0.3"
+  },
+  "devDependencies": {
+    "stylelint": "^14.8.2"
+  },
+  "peerDependencies": {
+    "stylelint": "^14.2"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "test": "stylelint --config index.js './tests/valid.css'"
+  }
+}
