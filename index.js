@@ -3,6 +3,7 @@
 module.exports = {
 	plugins: [
 		'stylelint-no-unsupported-browser-features',
+		'stylelint-selector-bem-pattern',
 	],
 	extends: [
 		'stylelint-config-property-sort-order-smacss',
@@ -16,6 +17,16 @@ module.exports = {
 				'severity': 'warning',
 			}
 		],
+		"plugin/selector-bem-pattern": {
+			'preset': 'bem',
+			"componentName": "(([a-z0-9]+(?!-$)-?)+)",
+			"componentSelectors": {
+				"initial": "^\\.c-{componentName}(((__|--)(([a-z0-9\\[\\]'=]+(?!-$)-?)+))+)?|\.(?:is|has)-(?:-[a-z]+)$",
+			},
+			"utilitySelectors": "^\\.u-([a-z]+)(?:-[a-z]+)?",
+			"implicitComponents": '**/06-components/**/*.scss',
+			"implicitUtilities": '**/07-utilities/**/*.scss',
+		},
 		'alpha-value-notation': [
 			'percentage',
 			{
@@ -193,7 +204,12 @@ module.exports = {
 		'selector-attribute-operator-space-after': 'never',
 		'selector-attribute-operator-space-before': 'never',
 		'selector-attribute-quotes': 'always',
-		'selector-class-pattern': "",
+		'selector-class-pattern': [
+			'^(?:(?:o|c|u|t|s|is|has|_|js|qa)-)?[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*(?:__[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:--[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:\\[.+\\])?$',
+			{
+				'message': 'Class names should adhear to the BEM CSS naming convention'
+			}
+		],
 		'selector-combinator-space-after': 'always',
 		'selector-combinator-space-before': 'always',
 		'selector-descendant-combinator-no-non-space': true,
