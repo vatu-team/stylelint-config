@@ -5,6 +5,7 @@ module.exports = {
 		'stylelint-no-unsupported-browser-features',
 	],
 	extends: [
+		'stylelint-config-property-sort-order-smacss',
 		'stylelint-config-standard-scss',
 		'stylelint-config-recommended',
 	],
@@ -134,6 +135,7 @@ module.exports = {
 				'severity': 'warning',
 			}
 		],
+		'max-nesting-depth': null,
 		'media-feature-colon-space-after': 'always',
 		'media-feature-colon-space-before': 'never',
 		'media-feature-name-case': 'lower',
